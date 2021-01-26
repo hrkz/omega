@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css?family=Alegreya&display=swap");
+
+h1,
+p {
+	font-family: 'Alegreya';
+}
+
+nav {
+	overflow: hidden;
+	padding: 20px 0;
+	text-align: center;
+	text-transform: uppercase;
+	background: #1d1e30;
+	color: #fff;
+}
+
+.container {
+	margin: auto;
+	width: 70%;
+	max-width: 900px;
+}
+
+.box {
+	margin: 80px 0;
+}
+
+.box,
+.editor {
+	display: block;
+	position: relative;
+	border: 1px solid #ddd;
+	width: 100%;
+	min-height: 300px;
+}
+
+.box *,
+.box *::before,
+.box *::after {
+	box-sizing: border-box;
+}
+
+.box .editor {
+	margin: 0 auto;
+}
+
+.editor {
+	box-sizing: border-box;
+	padding: 20px;
+	border-style: none;
+	resize: none;
+	outline: none;
+	overflow: auto;
+}
+
+.terminal {
+	padding: 10px;
+	font-family: 'Monospace';
+	background: #000;
+	color: #fff;
+}
+
+.panel {
+	width: 100%;
+	min-height: 36px;
+	background: #ecf0f1;
+	border-bottom: 1px solid #cfd9db;
+	margin: 0;
+	padding: 0 5px;
+	position: relative;
+	list-style-type: none;
+	line-height: 10px;
+	backface-visibility: hidden;
+	z-index: 11;
+}
+
+.panel::after {
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 36px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 1px;
+	background: #cfd9db;
+}
+
+.panel .group {
+	display: inline-block;
+}
+
+.panel .group::after {
+	content: " ";
+	display: inline-block;
+	width: 1px;
+	background: #d7e0e2;
+	margin: 0 5px;
+	height: 35px;
+	vertical-align: top;
+}
+
+.panel button {
+	display: inline-block;
+	position: relative;
+	width: 35px;
+	height: 35px;
+	padding: 1px 6px !important;
+	font-size: 16px;
+	margin-bottom: 1px;
+	overflow: hidden;
+	border: none;
+	cursor: pointer;
+	background: none;
+	vertical-align: middle;
+}
+
+.panel button:not(.disabled):hover, .panel button:not(.disabled):focus {
+	background: #fff;
+	outline: none;
+}
+
+.panel p {
+	font-size: 12px;
+}
+
+.panel .disabled {
+	opacity: 0.2;
+	cursor: default;
+	pointer-events: none;
+}
+
+.panel .dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.panel .dropdown .subdown {
+	display: none;
+	position: absolute;
+	top: 35px;
+	background: #fff;
+	min-width: 160px;
+	border: 1px solid #ecf0f1;
+	padding: 5px 0;
+	border-top: none;
+	margin-left: -1px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0 2px 3px;
+	z-index: 1;
+}
+
+.panel .dropdown .subdown p {
+	display: inline-block;
+	padding: 0 20px 0 10px;
+}
+
+.panel .dropdown .subdown button {
+	width: 100%;
+	display: block;
+	text-align: left;
+}
+
+.panel .dropdown .subdown button:hover,
+      .panel .dropdown .subdown button:focus {
+	background: #ecf0f1;
+}
+
+.panel .dropdown::after {
+	display: block;
+	content: " ";
+	position: absolute;
+	top: 25px;
+	right: 3px;
+	height: 0;
+	width: 0;
+	border: 3px solid transparent;
+	border-top-color: #555;
+}
+
+.panel .dropdown:hover .subdown,
+    .panel .dropdown:focus-within .subdown {
+	display: block;
+}
+
+.panel .dropdown:hover button,
+    .panel .dropdown:focus-within button {
+	background: #fff;
+}
