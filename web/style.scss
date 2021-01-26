@@ -1,0 +1,193 @@
+$primary-color: #ecf0f1 !default;
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya&display=swap');
+
+h1,
+p {
+  font-family: 'Alegreya';
+}
+
+nav {
+  overflow: hidden;
+  padding: 20px 0;
+	text-align: center;
+  text-transform: uppercase;
+	background: #1d1e30;
+  color: #fff; 
+}
+
+.container {
+  margin: auto;
+  width: 70%;
+  max-width: 900px;
+}
+
+.box {
+  margin: 80px 0;
+}
+
+.box, 
+.editor {
+  display: block;
+  position: relative;
+  border: 1px solid #ddd;
+  width: 100%;
+  min-height: 300px;
+}
+
+.box {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .editor {
+    margin: 0 auto;
+  }
+}
+
+.editor {
+  box-sizing: border-box;
+  padding: 20px;
+  border-style: none;
+  resize: none;
+  outline: none;
+  overflow: auto;
+}
+
+.terminal {
+  padding: 10px;
+  font-family: 'Monospace';
+  background: #000;
+  color: #fff;
+}
+
+.panel {
+  width: 100%;
+  min-height: 36px;
+  background: $primary-color;
+  border-bottom: 1px solid darken($primary-color, 10%);
+  margin: 0;
+  padding: 0 5px;
+  position: relative;
+  list-style-type: none;
+  line-height: 10px;
+  backface-visibility: hidden;
+  z-index: 11;
+
+  &::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: darken($primary-color, 10%);
+  }
+
+  .group {
+    display: inline-block;
+
+    &::after {
+      content: " ";
+      display: inline-block;
+      width: 1px;
+      background: #d7e0e2;
+      margin: 0 5px;
+      height: 35px;
+      vertical-align: top;
+    }
+  }
+
+  button {
+    display: inline-block;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    padding: 1px 6px !important;
+    font-size: 16px;
+    margin-bottom: 1px;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    background: none;
+    vertical-align: middle;
+
+    &:not(.disabled):hover,
+    &:not(.disabled):focus {
+      background: #fff;
+      outline: none;
+    }
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .disabled {
+    opacity: 0.2;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+
+    .subdown {
+      display: none;
+      position: absolute;
+      top: 35px;
+      background: #fff;
+      min-width: 160px;
+      border: 1px solid $primary-color;
+      padding: 5px 0;
+      border-top: none;
+      margin-left: -1px;
+      box-shadow: rgba(0, 0, 0, .1) 0 2px 3px;
+      z-index: 1;
+
+      p {
+        display: inline-block;
+        padding: 0 20px 0 10px;
+      }
+
+      button {
+        width: 100%;
+        display: block;
+        text-align: left;
+      }
+
+      button:hover,
+      button:focus {
+        background: $primary-color;
+      }
+    }
+
+    &::after {
+      display: block;
+      content: " ";
+      position: absolute;
+      top: 25px;
+      right: 3px;
+      height: 0;
+      width: 0;
+      border: 3px solid transparent;
+      border-top-color: #555;
+    }
+
+    &:hover .subdown,
+    &:focus-within .subdown {
+      display: block;
+    }
+
+    &:hover button,
+    &:focus-within button {
+      background: #fff;
+    }
+  }
+}
+
