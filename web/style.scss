@@ -19,12 +19,22 @@ nav {
 
 .container {
   margin: auto;
-  width: 70%;
+  width: 92%;
   max-width: 900px;
 }
 
 .box {
-  margin: 80px 0;
+  margin: 20px 0;
+}
+
+@media screen and (min-width: 401px) {
+  .container {
+    width: 70%;
+  }
+  
+  .box {
+    margin: 80px 0;
+  }
 }
 
 .box, 
