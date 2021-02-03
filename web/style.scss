@@ -1,6 +1,7 @@
 $primary-color: #ecf0f1 !default;
 
 @import url('https://fonts.googleapis.com/css?family=Alegreya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 
 h1,
 p {
@@ -47,6 +48,11 @@ nav {
   }
 }
 
+.editor,
+.terminal {
+  font-family: 'Fira Mono', monospace;
+}
+
 .editor {
   box-sizing: border-box;
   padding: 20px;
@@ -58,7 +64,6 @@ nav {
 
 .terminal {
   padding: 10px;
-  font-family: 'Monospace';
   background: #000;
   color: #fff;
 }
