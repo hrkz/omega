@@ -1,6 +1,7 @@
 $primary-color: #ecf0f1 !default;
 
 @import url('https://fonts.googleapis.com/css?family=Alegreya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 
 h1,
 p {
@@ -10,20 +11,26 @@ p {
 nav {
   overflow: hidden;
   padding: 20px 0;
-	text-align: center;
+  text-align: center;
   text-transform: uppercase;
-	background: #1d1e30;
+  background: #1d1e30;
   color: #fff; 
 }
 
 .container {
   margin: auto;
-  width: 70%;
-  max-width: 900px;
+  width: 900px;
+  max-width: 95%;
 }
 
 .box {
-  margin: 80px 0;
+  margin: 20px 0;
+}
+
+@media screen and (min-width: 401px) {
+  .box {
+    margin: 80px 0;
+  }
 }
 
 .box, 
@@ -47,6 +54,11 @@ nav {
   }
 }
 
+.editor,
+.terminal {
+  font-family: 'Fira Mono', monospace;
+}
+
 .editor {
   box-sizing: border-box;
   padding: 20px;
@@ -58,7 +70,6 @@ nav {
 
 .terminal {
   padding: 10px;
-  font-family: 'Monospace';
   background: #000;
   color: #fff;
 }
@@ -190,4 +201,3 @@ nav {
     }
   }
 }
-
