@@ -19,8 +19,8 @@ nav {
 
 .container {
   margin: auto;
-  width: 92%;
-  max-width: 900px;
+  width: 900px;
+  max-width: 95%;
 }
 
 .box {
@@ -28,10 +28,6 @@ nav {
 }
 
 @media screen and (min-width: 401px) {
-  .container {
-    width: 70%;
-  }
-  
   .box {
     margin: 80px 0;
   }
